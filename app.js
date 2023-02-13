@@ -22,6 +22,8 @@ const path = require('path');
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
 //middleware
+app.set('trust proxy', 1);
+
 app.use(express.json());
 app.use(helmet());
 app.use(xss());
